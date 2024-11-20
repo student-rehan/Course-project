@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Management</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Course Management System</h1>
+    <div class="tabs">
+      <button onclick="showTab('course-types')">Course Types</button>
+      <button onclick="showTab('courses')">Courses</button>
+      <button onclick="showTab('publish-courses')">Publish Courses</button>
+      <button onclick="showTab('registrations')">Student Registrations</button>
+    </div>
+    
+    <!-- Course Types -->
+    <div id="course-types" class="tab-content">
+      <h2>Manage Course Types</h2>
+      <input id="courseTypeName" type="text" placeholder="Course Type Name" />
+      <button onclick="addCourseType()">Add Course Type</button>
+      <table id="courseTypeList">
+        <thead>
+          <tr>
+            <th>Course Type</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Courses -->
+    <div id="courses" class="tab-content">
+      <h2>Manage Courses</h2>
+      <input id="courseName" type="text" placeholder="Course Name" />
+      <button onclick="addCourse()">Add Course</button>
+      <table id="courseList">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Publish Courses -->
+    <div id="publish-courses" class="tab-content">
+      <h2>Publish Courses</h2>
+      <select id="courseTypeDropdown"></select>
+      <select id="courseDropdown"></select>
+      <button onclick="publishCourse()">Publish Course</button>
+      <table id="publishedCourseList">
+        <thead>
+          <tr>
+            <th>Course Type</th>
+            <th>Course</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Student Registrations -->
+    <div id="registrations" class="tab-content">
+      <h2>Student Registrations</h2>
+      <select id="filterCourseTypeDropdown" onchange="filterCourses()"></select>
+      <select id="filteredCourseDropdown"></select>
+      <input id="studentName" type="text" placeholder="Student Name" />
+      <input id="studentEmail" type="email" placeholder="Student Email" />
+      <button onclick="registerStudent()">Register Student</button>
+      <table id="registrationList">
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Email</th>
+            <th>Course Type</th>
+            <th>Course</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
